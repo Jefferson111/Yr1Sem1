@@ -118,7 +118,7 @@ Melody::Melody(int pin) {
 void Melody::play_music(int note[], int note_duration[], int bpm) {
   int len = 0;
   int i;
-  float speed_factor = 60.0 / bpm;
+  float speed_factor = 120.0 / bpm;
   while (note[i] != -1) {
     len++;
   }
