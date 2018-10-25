@@ -7,6 +7,9 @@
 #define RED
 #define GREEN
 #define BLUE
+/*
+ * define all the sensors
+ */
 
 int getAvgReading(int times){      
 //find the average reading for the requested number of times of scanning LDR
@@ -32,8 +35,7 @@ void color_challenge() {
   red = getAvgReading(5);
   digitalWrite(RED, LOW);
   delay(/**/);
-
-
+  
   digitalWrite(GREEN, HIGH);
   delay(/**/);
   green = getAvgReading(5);
