@@ -106,10 +106,11 @@
 
 void play_music(int note[], int note_duration[], int bpm) {
   int len = 0;
-  int i;
+  int i = 0;
   float speed_factor = 60.0 / bpm;
   while (note[i] != -1) {
     len++;
+    i++;
   }
   for (i = 0; i < len; i++) {
     tone(SPEAKER, note[i], note_duration[i] * speed_factor);
@@ -229,7 +230,7 @@ void mario() {
   NOTE_A7, 0, NOTE_F7, NOTE_G7, 0, NOTE_E7, 0, NOTE_C7, NOTE_D7, NOTE_B6, 0, 0,
   NOTE_C7, 0, 0, NOTE_G6, 0, 0, NOTE_E6, 0, 0, NOTE_A6, 0, NOTE_B6,
   0, NOTE_AS6, NOTE_A6, 0, NOTE_G6, NOTE_E7, NOTE_G7, NOTE_A7, 0, NOTE_F7, NOTE_G7,
-  0, NOTE_E7, 0, NOTE_C7,NOTE_D7, NOTE_B6, 0, 0};
+  0, NOTE_E7, 0, NOTE_C7,NOTE_D7, NOTE_B6, 0, 0, -1};
 
   int duration[] = {SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, 
                     SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, 
@@ -242,7 +243,7 @@ void mario() {
                     SEMIQ, SEMIQ, SEMIQ, SEMIQ};
 
   int bpm = 60;
-  play_music(melody, duration, bpm, 80);
+  play_music(melody, duration, bpm);
 }
 
 void setup() {
