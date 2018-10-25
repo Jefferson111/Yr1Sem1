@@ -117,10 +117,11 @@ Melody::Melody(int pin) {
 
 void Melody::play_music(int note[], int note_duration[], int bpm) {
   int len = 0;
-  int i;
+  int i = 0;
   float speed_factor = 120.0 / bpm;
   while (note[i] != -1) {
     len++;
+    i++;
   }
   for (i = 0; i < len; i++) {
     tone(_pin, note[i], note_duration[i] * speed_factor);
