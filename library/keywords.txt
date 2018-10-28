@@ -1,9 +1,0 @@
-Melody	KEYWORD1
-mary_had_a_little_lamb	KEYWORD2
-merry_christmas	KEYWORD2
-happy_birthday	KEYWORD2
-fur_elise	KEYWORD2
-korobeiniki	KEYWORD2
-play_all	KEYWORD2
-random_tune	KEYWORD2
-xue_mao_jiao	KEYWORD2
