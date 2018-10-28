@@ -130,6 +130,123 @@ void play_music(int note[], int note_duration[], int bpm, int percussion[]) {
   }
 }
 
+void kahoot() {
+  int note[] = {NOTE_C4, NOTE_C4, NOTE_F4, NOTE_F4, NOTE_GS4, NOTE_GS4, NOTE_F4, NOTE_F4,
+                REST, NOTE_F4, NOTE_F4, REST, NOTE_F4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_D4,
+                NOTE_D4, NOTE_DS4, NOTE_DS4, NOTE_C4, NOTE_C4, REST, NOTE_C4, NOTE_C4,
+                REST, NOTE_C4, NOTE_C4, NOTE_C5, NOTE_C5, NOTE_AS4, NOTE_AS4, NOTE_GS4,
+                NOTE_GS4, NOTE_DS4, NOTE_DS4, REST, NOTE_DS4, NOTE_DS4, REST, NOTE_DS4, 
+                NOTE_DS4, NOTE_G4, NOTE_G4, NOTE_F4, NOTE_F4, NOTE_DS4, NOTE_DS4, NOTE_C4,
+                NOTE_C4, REST, NOTE_C4, NOTE_C4, REST, NOTE_C4, NOTE_C4, NOTE_C5, NOTE_C5, 
+                NOTE_AS4, NOTE_AS4, NOTE_GS4, NOTE_GS4, NOTE_DS4, NOTE_DS4, REST, NOTE_DS4, 
+                NOTE_DS4, REST, NOTE_DS4, NOTE_DS4, NOTE_G4, NOTE_G4, NOTE_D4, NOTE_D4, 
+                NOTE_DS4, NOTE_DS4, NOTE_C4, NOTE_C4, REST, NOTE_C4, NOTE_C4, -1};
+
+  int note_duration[] = {QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, CRO, QUA, QUA,
+                         CRO, QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, 
+                         CRO, QUA, QUA, CRO, QUA, QUA, QUA, QUA, QUA, QUA, QUA, 
+                         QUA, QUA, QUA, CRO, QUA, QUA, CRO, QUA, QUA, QUA, QUA, 
+                         QUA, QUA, QUA, QUA, QUA, QUA, CRO, QUA, QUA, CRO, QUA, 
+                         QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, CRO, QUA, 
+                         QUA, CRO, QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, 
+                         QUA, CRO, QUA, QUA};
+
+  int bpm = 60;
+  play_music(note, note_duration, bpm);                       
+}
+
+void konosuba_end() {
+  int note_A[] = {NOTE_C5, NOTE_C5, NOTE_D5, NOTE_E5, NOTE_E5, NOTE_G5, NOTE_A5, NOTE_C6, 
+                  NOTE_A5, NOTE_G5, NOTE_E5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_A5, NOTE_G5,
+                  NOTE_E5, NOTE_D5, NOTE_G4, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, -1};
+                
+  int note_B[] = {NOTE_C5, NOTE_C5, NOTE_D5, NOTE_E5, NOTE_E5, NOTE_G5, NOTE_A5, NOTE_C6, 
+                  NOTE_A5, NOTE_G5, NOTE_E5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_C5, NOTE_D5, 
+                  NOTE_E5, NOTE_E5, NOTE_G5, NOTE_A5, NOTE_G5, NOTE_E5, NOTE_D5, -1};
+
+  int note_C[] = {NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_G5, NOTE_A5, NOTE_G5, NOTE_E5,
+                  NOTE_D5, NOTE_C5, NOTE_E5, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_A5, NOTE_G5, 
+                  NOTE_A5, NOTE_G5, NOTE_E5, NOTE_D5, NOTE_G5, NOTE_E5, NOTE_E5, NOTE_F5, 
+                  NOTE_G5, NOTE_A5, NOTE_G5, NOTE_A5, NOTE_G5, NOTE_A5, NOTE_C6, NOTE_B5, 
+                  NOTE_C6, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_E5, NOTE_C5, NOTE_A4, NOTE_C5,
+                  NOTE_D5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_D5, NOTE_C5, -1};
+
+  int note_duration_A[] = {CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
+                           CRO, QUA, CRO + QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
+                           CRO, QUA, MNM + CRO};
+
+  int note_duration_B[] = {CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
+                           CRO, QUA, CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO + QUA, 
+                           CRO, QUA, MNM + CRO};
+
+  int note_duration_C[] = {CRO, QUA, MNM + QUA, QUA, MNM + QUA, QUA, CRO, QUA, CRO, QUA,
+                           CRO + QUA, CRO, QUA, MNM + QUA, QUA, MNM + QUA, QUA, CRO, QUA, 
+                           CRO, QUA, CRO + QUA, CRO, QUA, MNM + QUA, QUA, MNM + QUA, QUA, 
+                           CRO, QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, 
+                           CRO + QUA, CRO, QUA, CRO, QUA, CRO, QUA, MNM + CRO};
+
+  int bpm = 60;
+  play_music(note_A, note_duration_A, bpm);
+  play_music(note_B, note_duration_B, bpm);
+  play_music(note_A, note_duration_A, bpm);
+  play_music(note_C, note_duration_C, bpm);
+}
+
+void moonlight() {
+  int note[] = {NOTE_G5, NOTE_G5, NOTE_G5, NOTE_G5, NOTE_E5, NOTE_C5, NOTE_D5,
+                NOTE_E5, NOTE_C5, REST, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5,
+                NOTE_E5, NOTE_C5, NOTE_A4, NOTE_G4, REST, NOTE_G5, NOTE_G5, 
+                NOTE_G5, NOTE_G5, NOTE_E5, NOTE_C5, NOTE_D5, NOTE_E5, NOTE_C5, 
+                REST, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5, NOTE_E5, NOTE_C5, 
+                NOTE_D5, REST, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5,
+                NOTE_C5, NOTE_D5, NOTE_E5, NOTE_E5, NOTE_D5, NOTE_E5, NOTE_F5,
+                NOTE_E5, NOTE_D5, NOTE_C5, NOTE_C5, NOTE_A4, NOTE_E5, REST,
+                NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_D5, 
+                NOTE_E5, NOTE_E5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_E5, NOTE_D5, 
+                NOTE_C5, NOTE_C5, NOTE_A4, NOTE_G5, /**/NOTE_G5, NOTE_E5, NOTE_G5,
+                NOTE_A5, NOTE_B5, NOTE_A5, NOTE_G5, NOTE_C5, NOTE_D5, NOTE_E5,
+                NOTE_C5, NOTE_C6, NOTE_D6, NOTE_E6, NOTE_D6, NOTE_C6, NOTE_A5,
+                NOTE_E5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_A5, NOTE_G5, NOTE_A5,
+                NOTE_C6, NOTE_A5, NOTE_B5, NOTE_A5, NOTE_G5, NOTE_E5, NOTE_D5,
+                NOTE_E5, NOTE_G5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_E5, NOTE_D5,
+                -1};                                       //NOTE_A4, NOTE_C5
+
+  int note_duration[] = {QUA, QUA, QUA, CRO, QUA, QUA, QUA, CRO, QUA + MNM, QUA,
+                         QUA, QUA, QUA, QUA, CRO, SEMIQ, SEMIQ, SEMIBREVE, QUA,
+                         QUA, QUA, QUA, CRO, QUA, QUA, QUA, CRO, QUA + MNM, QUA,
+                         QUA, QUA, QUA, QUA, CRO, SEMIQ, SEMIQ, SEMIBREVE, QUA,
+                         QUA, QUA, QUA, CRO, QUA, QUA, QUA, CRO, QUA + CRO, QUA,
+                         QUA, QUA, QUA, QUA, QUA, CRO, CRO, SEMIBREVE, QUA, QUA,
+                         QUA, QUA, CRO, SEMIQ, ACC, ACC, QUA, QUA, CRO, QUA + CRO,
+                         QUA, QUA, QUA, QUA, QUA, QUA, CRO, CRO, SEMIBREVE, /**/CRO,
+                         QUA, QUA, QUA + SEMIQ, ACC, ACC, CRO, CRO, QUA, CRO, 
+                         CRO + QUA, CRO, SEMIQ, ACC, ACC, QUA, CRO, CRO, SEMIBREVE,
+                         QUA + SEMIQ, ACC, ACC, QUA, QUA, CRO, QUA + SEMIQ, ACC, ACC,
+                         MNM, MNM, QUA, QUA, QUA, QUA, QUA, CRO, QUA, SEMIBREVE};
+
+  int bpm = 60;
+  play_music(note, note_duration, bpm);  
+}
+
+void xue_mao_jiao() {
+  int note[] = {NOTE_FS5, NOTE_GS5, NOTE_AS5, NOTE_CS5, NOTE_FS5, NOTE_AS5, NOTE_AS5,
+                NOTE_GS5, NOTE_FS5, NOTE_GS5, NOTE_CS6, NOTE_CS6, NOTE_CS6, NOTE_CS6,
+                NOTE_FS5, NOTE_F5, NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_FS5, NOTE_FS5,
+                NOTE_F5, NOTE_FS5, NOTE_F5, NOTE_FS5, NOTE_F5, NOTE_DS5, NOTE_CS5, 
+                NOTE_CS5, NOTE_CS5, NOTE_DS5, NOTE_DS5, NOTE_DS5, NOTE_DS5, NOTE_DS5,
+                NOTE_CS5, NOTE_AS4, NOTE_CS5, NOTE_AS4, NOTE_CS5, NOTE_GS5, NOTE_FS5,
+                NOTE_CS5, NOTE_AS5, NOTE_AS5, NOTE_AS5, NOTE_B5, NOTE_CS6, NOTE_FS5,
+                NOTE_FS5, NOTE_AS5, NOTE_GS5, -1};
+
+  int note_duration[] = {QUA, QUA, QUA, QUA, QUA, QUA, CRO, QUA, QUA, QUA, QUA,
+                         QUA, QUA, CRO, QUA, QUA, QUA, QUA, QUA, QUA, CRO, QUA, 
+                         QUA, QUA, QUA, QUA, QUA, CRO, QUA, QUA, QUA, QUA, QUA, 
+                         QUA, CRO, QUA, QUA, QUA, QUA, QUA, QUA, CRO + QUA, QUA,
+                         QUA, QUA, QUA, QUA, QUA, QUA, QUA, QUA, SEMIBREVE};
+
+  int bpm = 60;
+  play_music(note, note_duration, bpm);  
+}
 void mary_had_a_little_lamb() {
   int note[] = {NOTE_E4, NOTE_D4, NOTE_C4, NOTE_D4, NOTE_E4, NOTE_E4, 
                 NOTE_E4, NOTE_D4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_G4, 
@@ -267,6 +384,7 @@ void despacito() {
   int bpm = 50;
   play_music(note, note_duration, bpm, percussion);
 }
+
 void setup() {
   merry_christmas();
   happy_birthday();
