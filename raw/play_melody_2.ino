@@ -252,11 +252,11 @@ void konosuba_end() {
                   NOTE_C6, NOTE_E5, NOTE_F5, NOTE_G5, NOTE_E5, NOTE_C5, NOTE_A4, NOTE_C5,
                   NOTE_D5, NOTE_E5, NOTE_D5, NOTE_C5, NOTE_D5, NOTE_C5, -1};
 
-  int note_duration_A[] = {CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
+  int note_duration_A[] = {CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
                            CRO, QUA, CRO + QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
                            CRO, QUA, MNM + CRO};
 
-  int note_duration_B[] = {CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
+  int note_duration_B[] = {CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO, QUA, CRO, QUA, CRO + QUA, 
                            CRO, QUA, CRO + QUA, CRO, QUA, CRO + QUA, CRO, QUA, CRO + QUA, 
                            CRO, QUA, MNM + CRO};
 
