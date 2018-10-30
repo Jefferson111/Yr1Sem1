@@ -149,7 +149,7 @@ void little_happiness() {
                   NOTE_A5, NOTE_G5, NOTE_E5, NOTE_F5, NOTE_A4, NOTE_D5, NOTE_F5, NOTE_A4,
                   NOTE_D5, NOTE_E5, NOTE_E5, NOTE_E5, NOTE_A5, NOTE_C6, NOTE_A5, NOTE_F5,
                   NOTE_E5, NOTE_D5, NOTE_AS5, NOTE_AS5, NOTE_D5, NOTE_C6, NOTE_AS5, NOTE_A5,
-                  NOTE_E5, NOTE_A5, NOTE_A5, NOTE_E5, NOTE_AS5, NOTE_A5, NOTE_F5, NOTE_B4,
+                  NOTE_C5, NOTE_A5, NOTE_A5, NOTE_C5, NOTE_AS5, NOTE_A5, NOTE_F5, NOTE_B4,
                   NOTE_G5, NOTE_G5, NOTE_B4, NOTE_A5, NOTE_F5, NOTE_F5, NOTE_A5, NOTE_G5,
                   NOTE_F5, -1};
 
