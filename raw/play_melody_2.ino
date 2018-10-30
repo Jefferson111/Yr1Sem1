@@ -103,9 +103,8 @@
 #define SEMIQ 62 //SEMIQUAVER
 #define ACC 31 //ACCIDENTAL OR DEMISEMIQUAVER
 #define SPEAKER 8//update to whatever output connected to speaker
-#define RELAY A1 //can connect LED to relay or something
 
-void play_music(int note[], int note_duration[], int bpm, int percussion[]) {
+void play_music(int note[], int note_duration[], int bpm) {
   int len = 0;
   int i = 0;
   float speed_factor = 120.0 / bpm;
@@ -113,19 +112,10 @@ void play_music(int note[], int note_duration[], int bpm, int percussion[]) {
     len++;
     i++;
   }
-  int temp = LOW;
   for (i = 0; i < len; i++) {
     tone(SPEAKER, note[i], note_duration[i] * speed_factor);
     delay(note_duration[i] * 1.30 * speed_factor);
     noTone(SPEAKER);
-    if (percussion[i] == 1) {
-      digitalWrite(RELAY, temp);
-      if (temp == LOW) {
-        temp = HIGH;
-      }
-      else {
-        temp = LOW;
-      }
     }
   }
 }
@@ -273,6 +263,8 @@ void konosuba_end() {
   play_music(note_C, note_duration_C, bpm);
 }
 
+//This song is broken
+/*
 void moonlight() {
   int note[] = {NOTE_G5, NOTE_G5, NOTE_G5, NOTE_G5, NOTE_E5, NOTE_C5, NOTE_D5,
                 NOTE_E5, NOTE_C5, REST, NOTE_C5, NOTE_A4, NOTE_C5, NOTE_D5,
@@ -284,7 +276,7 @@ void moonlight() {
                 NOTE_E5, NOTE_D5, NOTE_C5, NOTE_C5, NOTE_A4, NOTE_E5, REST,
                 NOTE_C5, NOTE_C5, NOTE_C5, NOTE_C5, NOTE_D5, NOTE_C5, NOTE_D5, 
                 NOTE_E5, NOTE_E5, NOTE_D5, NOTE_E5, NOTE_F5, NOTE_E5, NOTE_D5, 
-                NOTE_C5, NOTE_C5, NOTE_A4, NOTE_G5, /**/NOTE_G5, NOTE_E5, NOTE_G5,
+                NOTE_C5, NOTE_C5, NOTE_A4, NOTE_G5, NOTE_G5, NOTE_E5, NOTE_G5,
                 NOTE_A5, NOTE_B5, NOTE_A5, NOTE_G5, NOTE_C5, NOTE_D5, NOTE_E5,
                 NOTE_C5, NOTE_C6, NOTE_D6, NOTE_E6, NOTE_D6, NOTE_C6, NOTE_A5,
                 NOTE_E5, NOTE_G5, NOTE_A5, NOTE_B5, NOTE_A5, NOTE_G5, NOTE_A5,
@@ -299,7 +291,7 @@ void moonlight() {
                          QUA, QUA, QUA, CRO, QUA, QUA, QUA, CRO, QUA + CRO, QUA,
                          QUA, QUA, QUA, QUA, QUA, CRO, CRO, SEMIBREVE, QUA, QUA,
                          QUA, QUA, CRO, SEMIQ, ACC, ACC, QUA, QUA, CRO, QUA + CRO,
-                         QUA, QUA, QUA, QUA, QUA, QUA, CRO, CRO, SEMIBREVE, /**/CRO,
+                         QUA, QUA, QUA, QUA, QUA, QUA, CRO, CRO, SEMIBREVE, CRO,
                          QUA, QUA, QUA + SEMIQ, ACC, ACC, CRO, CRO, QUA, CRO, 
                          CRO + QUA, CRO, SEMIQ, ACC, ACC, QUA, CRO, CRO, SEMIBREVE,
                          QUA + SEMIQ, ACC, ACC, QUA, QUA, CRO, QUA + SEMIQ, ACC, ACC,
@@ -308,6 +300,7 @@ void moonlight() {
   int bpm = 60;
   play_music(note, note_duration, bpm);  
 }
+*/
 
 void xue_mao_jiao() {
   int note[] = {NOTE_FS5, NOTE_GS5, NOTE_AS5, NOTE_CS5, NOTE_FS5, NOTE_AS5, NOTE_AS5,
@@ -328,6 +321,7 @@ void xue_mao_jiao() {
   int bpm = 60;
   play_music(note, note_duration, bpm);  
 }
+
 void mary_had_a_little_lamb() {
   int note[] = {NOTE_E4, NOTE_D4, NOTE_C4, NOTE_D4, NOTE_E4, NOTE_E4, 
                 NOTE_E4, NOTE_D4, NOTE_D4, NOTE_D4, NOTE_E4, NOTE_G4, 
@@ -338,11 +332,9 @@ void mary_had_a_little_lamb() {
   int note_duration[] = {CRO, CRO, CRO, CRO, CRO, CRO, MNM, CRO, 
                          CRO, MNM, CRO, CRO, MNM, CRO, CRO, CRO, 
                          CRO, CRO, CRO, MNM, CRO, CRO, CRO, CRO, CRO};
-
-  int percussion[25] = {0};
                          
   int bpm = 120;
-  play_music(note, note_duration, bpm, percussion);  
+  play_music(note, note_duration, bpm);  
 }
 
 void merry_christmas() {
@@ -363,10 +355,8 @@ void merry_christmas() {
                          CRO, CRO, QUA, QUA, QUA, QUA, CRO, CRO,
                          QUA, QUA, CRO, CRO ,CRO, MNM};
 
-  int percussion[54] = {0};   
-                      
   int bpm = 100;
-  play_music(note, note_duration, bpm, percussion);
+  play_music(note, note_duration, bpm);
 }
 
 void happy_birthday() {
@@ -379,12 +369,10 @@ void happy_birthday() {
                          QUA + SEMIQ, SEMIQ, CRO, CRO, CRO, MNM,
                          QUA + SEMIQ, SEMIQ, CRO, CRO, CRO, CRO,
                          CRO, QUA + SEMIQ, SEMIQ, CRO, CRO, CRO,
-                         MNM};
-
-  int percussion[25] = {0};                       
+                         MNM};                   
   
   int bpm = 100;
-  play_music(note, note_duration, bpm, percussion); 
+  play_music(note, note_duration, bpm); 
 }
 
 void fur_elise() {
@@ -413,11 +401,9 @@ void fur_elise() {
                          QUA, QUA, CRO + QUA, QUA, QUA, QUA, CRO + QUA, QUA, QUA, QUA, 
                          QUA, QUA, QUA, QUA, QUA, QUA, CRO + QUA, QUA, QUA, QUA, 
                          CRO + QUA, QUA + ACC, QUA + ACC, QUA + ACC, MNM + QUA};
-
-  int percussion[95]= {0};
   
   int bpm = 100;
-  play_music(note, note_duration, bpm, percussion);
+  play_music(note, note_duration, bpm);
 }
 
 void korobeiniki() {
@@ -434,12 +420,10 @@ void korobeiniki() {
                          CRO, CRO, MNM, CRO, QUA, QUA, CRO, QUA, QUA, CRO, QUA, 
                          QUA, CRO, QUA, QUA, CRO, SEMIQ, SEMIQ, QUA, CRO, CRO, 
                          CRO, CRO, MNM};
-
-  int percussion[44]= {0};
   
   int bpm = 180;
-  play_music(note, note_duration, bpm, percussion);
-  play_music(note, note_duration, bpm, percussion);
+  play_music(note, note_duration, bpm);
+  play_music(note, note_duration, bpm);
 }
 
 void despacito() {
@@ -457,21 +441,27 @@ void despacito() {
                          SEMIQ, SEMIQ, QUA, SEMIQ, SEMIQ, ACC, ACC, SEMIQ, ACC, 
                          SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ, SEMIQ,
                          QUA, SEMIQ, QUA, QUA, SEMIQ + QUA};
-
-  int percussion[] = {0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1,
-                      0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0,
-                      0, 1, 1, 1, 0, 0, 0, 0};
-                
+  
   int bpm = 50;
-  play_music(note, note_duration, bpm, percussion);
+  play_music(note, note_duration, bpm);
 }
 
+/* Comment out the songs that are not played as total memory of songs exceed mbot memory limit
+   Adjust bpm to speed up the song
+*/
+
 void setup() {
-  merry_christmas();
-  happy_birthday();
-  mary_had_a_little_lamb();
-  fur_elise();
-  korobeiniki();
+  //despacito();
+  //merry_christmas();
+  //happy_birthday();
+  //mary_had_a_little_lamb();
+  //fur_elise();
+  //korobeiniki();
+  //konosuba_end();
+  //little_happiness();
+  //xue_mao_jiao();
+  //kahoot();
+  laputa();
 }
 
 void loop() {
