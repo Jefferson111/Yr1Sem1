@@ -29,8 +29,8 @@ class Melody
     void happy_birthday();
     void fur_elise();
     void korobeiniki();
-    void play_all();
-    void random_tune();
+    void play_all(); //normal mbot memory will not support this
+    void random_tune(); 
   private:
     void play_music(int note[], int note_duration[], int bpm);
     int _pin;  
